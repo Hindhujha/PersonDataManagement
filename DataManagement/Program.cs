@@ -19,6 +19,9 @@ namespace DataManagement
             Console.WriteLine("*****************************************************************************");
             Console.WriteLine("AVERAGE AGE");
             AverageAge(listPerson);
+            Console.WriteLine("*****************************************************************************");
+            Console.WriteLine("CHECKING PERSON IN THE LIST OR NOT");
+            CheckPerson(listPerson);
         }
         //list of persons and their datas
         private static void AddRecords(List<Person> listPersons)
@@ -64,8 +67,20 @@ namespace DataManagement
         {
         var average=listPersons.Average(e => e.Age);
             Console.WriteLine("AVERAGE AGE IS : " + Math.Round(average));
+        }
 
+        //checking for particular person
 
+        private static void CheckPerson(List<Person>listPersons)
+        {
+         if(listPersons.Exists(e=>e.Name=="LISA"))
+            {
+                Console.WriteLine("LISA EXISTS IN OUR LIST");
+            }
+            else
+            {
+                Console.WriteLine("LISA IS NOT IN THE LIST");
+            }
         }
     }
 }
