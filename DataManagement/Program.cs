@@ -25,6 +25,9 @@ namespace DataManagement
             Console.WriteLine("*****************************************************************************");
             Console.WriteLine("SKIP PERSON LESS THAN 60");
             SkipRecord(listPerson);
+            Console.WriteLine("*****************************************************************************");
+            Console.WriteLine("REMOVE PERSON FROM LIST");
+            RemovePerson(listPerson);
         }
         //list of persons and their datas
         private static void AddRecords(List<Person> listPersons)
@@ -92,6 +95,19 @@ namespace DataManagement
             foreach(Person person in listPersons.SkipWhile(e=>e.Age <60))
             {
                 Console.WriteLine("NAME :" + person.Name + " \t AGE : " + person.Age);
+            }
+        }
+
+        //remove person
+
+        private static void RemovePerson(List<Person> listPersons)
+        {
+            listPersons.RemoveAll(e => e.Name == "SCANDAL");
+            Console.WriteLine("AFTER REMOVING SCANDAL IN THE LIST: ");
+            foreach (Person person in listPersons)
+            {
+                Console.WriteLine("SSN: " + person.SSN + " NAME: " + person.Name + " Address: " + person.Address
+                + " AGE :" + person.Age);
             }
         }
     }
