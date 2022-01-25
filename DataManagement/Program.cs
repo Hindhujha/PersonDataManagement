@@ -9,7 +9,7 @@ namespace DataManagement
             List<Person> listPerson=new List<Person>();
             AddRecords(listPerson);
         }
-        //list of persons datas
+        //list of persons and their datas
         private static void AddRecords(List<Person> listPersons)
         {
             listPersons.Add(new Person("2034556787890", "JOHN", "NEW YORK", 25));
