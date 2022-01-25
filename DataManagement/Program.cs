@@ -22,6 +22,9 @@ namespace DataManagement
             Console.WriteLine("*****************************************************************************");
             Console.WriteLine("CHECKING PERSON IN THE LIST OR NOT");
             CheckPerson(listPerson);
+            Console.WriteLine("*****************************************************************************");
+            Console.WriteLine("SKIP PERSON LESS THAN 60");
+            SkipRecord(listPerson);
         }
         //list of persons and their datas
         private static void AddRecords(List<Person> listPersons)
@@ -80,6 +83,15 @@ namespace DataManagement
             else
             {
                 Console.WriteLine("LISA IS NOT IN THE LIST");
+            }
+        }
+        //skip record
+
+        private static void SkipRecord(List<Person>listPersons)
+        {
+            foreach(Person person in listPersons.SkipWhile(e=>e.Age <60))
+            {
+                Console.WriteLine("NAME :" + person.Name + " \t AGE : " + person.Age);
             }
         }
     }
