@@ -16,6 +16,9 @@ namespace DataManagement
             Console.WriteLine("*****************************************************************************");
             Console.WriteLine("RETRIEVING AGE BETWEEN 13 TO 18");
             Retrieve_Age13btwn18(listPerson);
+            Console.WriteLine("*****************************************************************************");
+            Console.WriteLine("AVERAGE AGE");
+            AverageAge(listPerson);
         }
         //list of persons and their datas
         private static void AddRecords(List<Person> listPersons)
@@ -54,6 +57,15 @@ namespace DataManagement
             {
                 Console.WriteLine("NAME :" + person.Name + " \t AGE : " + person.Age);
             }
+        }
+
+        //Average  age 
+        private static void AverageAge(List<Person> listPersons)
+        {
+        var average=listPersons.Average(e => e.Age);
+            Console.WriteLine("AVERAGE AGE IS : " + Math.Round(average));
+
+
         }
     }
 }
